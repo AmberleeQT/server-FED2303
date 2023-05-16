@@ -1,3 +1,5 @@
+## Day 1
+
 1. Create index.js file
 2. Initialize a project in the terminal with the command:
    > npm init
@@ -228,3 +230,37 @@ return res.json()
 
 - URLs are always a string.
 - you will need to convert numbers, objects, etc into the appropriate data type later on.
+
+## Day 2
+
+35. Install Postman
+    > https://www.postman.com/downloads/
+
+- download and run installer
+- When prompted to sign in or create an account, select ' Skip and go to app' in the footer
+
+36. Install MySQL
+    > https://dev.mysql.com/downloads/mysql/
+
+- download and run installer
+- Setup Type: Developer Default
+- Check Requirements: You may need to install python. Follow the link, install with defaults. Review documentation at your own leisure. Click [ Next > ]
+- Proceed through with defaults
+- Accounts and Roles: This is where you will be asked for a password
+  Create a new one or leave it blank. Either way, you MUST remember what you did. It is difficult to reset a ROOT password
+- Continue on with defaults.
+
+37. Install dbeaver (database client)
+    > https://dbeaver.io/download/
+
+- Download and run installer
+- Complete with defaults
+
+38. Documentation Links
+
+    > https://www.python.org/downloads/ > https://docs.python.org/3.11/tutorial/index.html > https://docs.python.org/3.11/index.html > https://docs.python.org/3.11/using/windows.html > https://docs.python.org/3.11/whatsnew/3.11.html > https://dev.mysql.com/doc/mysql-shell/8.0/en/ > https://dev.mysql.com/blog-archive/introducing-mysql-innodb-replicaset/ > https://dev.mysql.com/blog-archive/ > https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-innodb-cluster-setting-up-a-real-world-cluster/ > https://dev.mysql.com/blog-archive/mysql-innodb-cluster-changing-cluster-options-live/
+
+39. How to get to MySQL server
+
+- Mac: system preferences > MySQL > click [ run server ]
+- Windows: services app > scroll down to and select MySQL80 -- You should see the options to `Stop`, `Pause`, and `Restart` your MySQL server

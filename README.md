@@ -274,3 +274,12 @@ return res.json()
 - Connection Settings > Authentication - Enter password
 - Click [ Test Connection ... ] > fix errors, else click [Finish]
 - You should now see `localhost - localhost:3306` in your Database Navigator
+- Expand localhost > Databases
+- Right click Databases folder - [ Create New Database ]
+- Name that database `fed_2303` or something similar
+- Yay! You've created a database
+- Note that the `Tables` folder is empty
+
+## Begin Coding!
+
+41. Things to install

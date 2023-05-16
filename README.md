@@ -264,3 +264,13 @@ return res.json()
 
 - Mac: system preferences > MySQL > click [ run server ]
 - Windows: services app > scroll down to and select MySQL80 -- You should see the options to `Stop`, `Pause`, and `Restart` your MySQL server
+
+40. DBeaver
+
+- New to DBeaver? You can opt into creating their sample database to explore features. Feel free to do so.
+- Create a new server > Top left, below [File], click the blue connection with the green +
+- Modal: Connect to a database > select MySQL > [ Next > ]
+- Connection Settings > Server - Leave all as is
+- Connection Settings > Authentication - Enter password
+- Click [ Test Connection ... ] > fix errors, else click [Finish]
+- You should now see `localhost - localhost:3306` in your Database Navigator

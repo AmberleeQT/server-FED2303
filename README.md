@@ -283,3 +283,36 @@ return res.json()
 ## Begin Coding!
 
 41. Things to install
+
+- npm i dotenv
+-
+
+42. What they do
+
+- dotenv
+  :: allows you to use environment files
+  :: env files = most common way to configure a serve and environment w/o code
+
+43. How to NOT hardcode a port
+
+- create a file `.env`
+- in .env file: `PORT = 80`
+- in index,js: import dotenv
+- run configuration: dotenv.config();
+
+44. dotenv.config();
+
+- looks through you files for .env file.
+
+45. npm run start
+
+- notice server is runnin on port 80 --> comes from the .env file
+
+46. ?? const PORT = process.env.PORT || 3000
+
+- process: the namespace in which a particular software is running on
+- port: the address your software is listening on
+
+## Database configuration
+
+47. Start configuring database

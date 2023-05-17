@@ -329,3 +329,54 @@ return res.json()
     /db
     /models
     /routers
+
+50. Create DB connection
+
+- Create file: /db/index.js
+- !! Reference sequalize docs for the code !!
+- 2 ways to create this connection
+- i. individual configuration
+- ii. connect string
+
+51. Connect String
+
+- has all configurations for a connection but condensed into a single string
+- connector (MySQL) parses the connect string for the information
+
+52. Object Implementation
+
+- sequalize's standard way of making this connection
+
+53. Setup
+
+"use strict"; // turns off certain JS features for a more secured JS file
+
+const config = {
+username:'root',
+// standard
+password: '',
+// Whatever you selected
+database: 'fed_2303',
+// your database
+host:'127.0.0.1',
+// standard unless you happen to have changed it
+dialect: 'mysql'
+// the database being interacted with
+}
+
+const db = {}
+// placehold for db configuration
+config.logging = console.log;
+// register logger to see what is happening on the backend
+// Note: Conventionally, classes are capitalized. Thats why const Sequalize is capitalized
+const sequalize = new Sequelize(config);
+// create a new instance of the Sequelize class, passing in the config object
+
+// \** Holders next
+db.sequalize = sequalize;
+// store our *instance\* created for the db
+db.Sequelize = Sequelize;
+// re-export the class in case we need to make a second connection
+
+module.exports = db;
+// CommonJS module export method

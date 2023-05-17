@@ -6,6 +6,16 @@ const dotenv = require('dotenv');
 // run configuration
 dotenv.config();
 
+// Bring is database & models
+const db = require('./db')
+const User = require('./models/users');
+const Post = require('./models/posts');
+
+// Sync code to Database
+db.sequelize.sync().then(() => {
+    console.log('DB updated successfully')
+})
+
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;

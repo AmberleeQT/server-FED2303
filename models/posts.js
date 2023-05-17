@@ -1,13 +1,13 @@
-const { DataTypes } = require('sequelize');
-const db = require('../db');
+const { DataTypes } = require("sequelize");
+const db = require("../db");
 
 // create relationship between posts and users
-const User = require('./users');
+const User = require('./users')
 // one-to-many relationship. One user may have many posts
 
-const Post = db.sequalize.define(
-  'Posts',
-      {
+const Post = db.sequelize.define(
+    'Posts',
+    {
         id: {
             primaryKey: true,
             autoIncrement: true,

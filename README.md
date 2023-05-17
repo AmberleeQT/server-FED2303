@@ -534,3 +534,21 @@ onUpdate:'CASCADE'
 
 module.exports=Post;
 // export so this can be loaded in our database
+
+59. Load these up into the application database
+
+- go back to entry point `index.js`
+  // bring in DB and Models
+  const db = require('./db')
+  const User = require('./models/users');
+  const Post = require('./models/posts');
+  // Sync code to DB
+  db.sequelize.sync().then(()=>{
+  console.log('DB updated successfully')
+  })
+
+  - Note: work through error messages as needed.
+
+60. Confirm update to DBeaver database
+
+- you should see 'posts' and 'users' in the tables folder

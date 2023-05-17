@@ -10,12 +10,12 @@ const config = {
   dialect: 'mysql'
 }
 
-const db = {};
+const db = {}
 config.logging = console.log;
 
-const sequalize = new Sequelize(config);
+const sequelize = new Sequelize(config)
 
-db.sequalize = sequalize;
-db.Sequelize = Sequelize;
+db.sequelize = sequelize
+db.Sequelize = Sequelize
 
 module.exports = db;

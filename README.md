@@ -591,9 +591,24 @@ module.exports=Post;
 
 66. Notes
 
+- '/' -> root route specific to the router where it is defined
 - Dynamic routing: '/:routeParam' -> convention followed _everywhere_
 - Route handler naming convention: 'http...' -> most common convention, but not the only convention out there -> reminder that this is a route handler
 - !! POST method: In this demo, POST is also used to UPDATE a user. This is what he does as work, so that is what he did here.
 
 67. Export router from `users.router.js`
 68. Export handlers in `users.controller.js`
+
+69. Update main application file (entry point `index.js`) to use the user router
+    ...
+    const userRouter = require('./routers/users.router');
+    ...
+    app.use('/users', userRouter);
+    ...
+
+- Endpoints defined in user.router will be concatinated to this '/users' endpoint defined here
+
+70. Test updated app in debugger
+
+- Make sure all terminals have been terminated
+- 'Run and Debug'

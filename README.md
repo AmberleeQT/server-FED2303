@@ -421,3 +421,8 @@ file.indexOf(".") !== 0
 module.export = db;
 // re-export the database
 // this file basically loads every model into our db
+
+56. create models for the database
+
+- posts.js
+- users.js

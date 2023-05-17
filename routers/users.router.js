@@ -1,6 +1,6 @@
 const express = require('express');
 // create our router
-const router = express.router();
+const router = express.Router();
 // bring in controller functions - will define later
 const {
   httpGetUsers,

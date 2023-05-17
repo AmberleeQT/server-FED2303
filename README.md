@@ -612,3 +612,16 @@ module.exports=Post;
 
 - Make sure all terminals have been terminated
 - 'Run and Debug'
+
+71. Open Postman
+
+- GET : localhost:PORT/users
+  where PORT is whatever port number you see in your debug terminal
+
+- GET : localhost:80/users
+- GET : localhost:80/users/234
+- POST : localhost:80/users
+- DELETE: localhost:80/users/234
+- POST : localhost:80/users/update-user/234
+
+72. Confirm router is configured correctly and commit

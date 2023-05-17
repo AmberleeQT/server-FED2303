@@ -347,7 +347,7 @@ return res.json()
 
 - sequalize's standard way of making this connection
 
-53. Setup
+53. Database Conenction - /db/index.js
 
 "use strict"; // turns off certain JS features for a more secured JS file
 
@@ -380,3 +380,44 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 // CommonJS module export method
+
+54. Set up some tables - /models/index.js
+
+- MySQL -> tables -> relational data -> tables with columns
+- ORM -> allows you to use JS to create an object that a tbale is then built off of (Don't have to write the individual queries the table is based on)
+- models: classes (object blueprints) of what our data should look like
+
+55. models/index.js
+    const fs = require('fs');
+    // fs = file system
+    // -> module provided to you by node
+    // -> already has the bindings to work with whatever OS you are using
+    // -> !! What you use to access any file in your system !!
+    const path = require('path')
+    // pre-built in node
+    // allows you to work with paths in a standard way
+    // Needed because Mac and Windows have different methods of accessing paths
+    const db = require('../db/index')
+    // configuration we just wrote
+    const baseName = path.basename(**filename)
+    // **filename - global variable set by node
+    // basename - start of your project, get me the path of the particular file
+
+fs.readdirSync(\_\_dirname)
+// syncronously read the file system, look at the present directory (models)
+.filter((file)=> {
+// filter through the current directory
+// remove index.js and any file that is NOT a .js file
+return (
+file.indexOf(".") !== 0
+// we don't want the file we are currently on
+&& file !== baseName
+// don't want the baseName file
+&& file.slice(-3) === '.js'
+// DO want the file with the '.js' extension
+)
+})
+
+module.export = db;
+// re-export the database
+// this file basically loads every model into our db

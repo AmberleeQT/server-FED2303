@@ -315,7 +315,7 @@ return res.json()
 
 ## Database configuration
 
-47. npm i mysq12
+47. npm i mysql2
 
 - database connector - take software an allows it to have a direct connection to the database
 
@@ -426,3 +426,111 @@ module.export = db;
 
 - posts.js
 - users.js
+
+57. Users
+    const { DataTypes } = require('sequelize');
+    // enable data type mapping from our ORM
+    const db = require('../db/index');
+    // import DB configuration
+
+const User = db.sequelize.define(
+'users',
+{
+id: {
+primaryKey: true,
+autoIncrement: true,
+type: DataTypes.INTEGER,
+allowNull: false,
+},
+username:{
+type: DataTypes.STRING,
+allowNull: false
+},
+name:{
+type: DataTypes.STRING,
+},
+address_1: {
+type: DataTypes.STRING,
+},
+address_2: {
+type: DataTypes.STRING,
+},
+city: {
+type: DataTypes.STRING,
+},
+state: {
+type: DataTypes.STRING,
+},
+postal_code: {
+type: DataTypes.STRING,
+},
+primary_phone: {
+type: DataTypes.STRING,
+},
+created_at: {
+type: DataTypes.DATE,
+},
+last_modified: {
+type: DataTypes.DATE,
+}
+},{
+timestamps:true,
+updatedAt:'last_modified',
+createdAt:'created_at'
+}
+)
+
+module.exports = User;
+
+58. Posts
+    const { DataTypes } = require('sequelize');
+    const db = require('../db');
+
+// create relationship between posts and users
+const User = require('./users');
+// one-to-many relationship. One user may have many posts
+
+const Post = db.sequalize.define(
+'Posts',
+{
+id: {
+primaryKey: true,
+autoIncrement: true,
+type: DataTypes.INTEGER,
+allowNull: false,
+},
+title: {
+type: DataTypes.STRING,
+allowNull: false,
+},
+content: {
+type: DataTypes.STRING,
+},
+user_id: {
+type: DataTypes.INTEGER,
+allowNull: false,
+},
+created_at: {
+type: DataTypes.DATE,
+},
+last_modified: {
+type: DataTypes.DATE,
+},
+},
+{
+timestamps: true,
+updatedAt: "last_modified",
+createdAt: "created_at",
+}
+)
+
+User.hasMany(Post, {
+foreignKey:'user_id',
+onDelete:'CASCADE',
+onUpdate:'CASCADE'
+})
+// primaryKey - unique record in that table
+// foreignKey - connects this record to another record in a different table
+
+module.exports=Post;
+// export so this can be loaded in our database

@@ -315,4 +315,17 @@ return res.json()
 
 ## Database configuration
 
-47. Start configuring database
+47. npm i mysq12
+
+- database connector - take software an allows it to have a direct connection to the database
+
+48. npm i sequelize
+
+- ORM -> Object relational mapper
+- generic orm for all sql based-databases
+- Documentation: sequalize.org
+
+49. Directories!
+    /db
+    /models
+    /routers

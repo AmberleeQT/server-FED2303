@@ -1,10 +1,14 @@
 const express = require('express');
+// Create Node App
+const app = express();
+
+const dotenv = require('dotenv');
+// run configuration
+dotenv.config();
+
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
-
-// Create Node App
-const app = express();
 
 // Middleware
 app.use(bodyParser.json())

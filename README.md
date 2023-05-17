@@ -549,6 +549,51 @@ module.exports=Post;
 
   - Note: work through error messages as needed.
 
-60. Confirm update to DBeaver database
+60. Sync and confirm update to DBeaver database
+    // Sync code to DB
+    db.sequelize.sync().then(()=>{
+    console.log('DB updated successfully')
+    })
+
+- .sync() is a promise, can use `async` and `await` if you want
+- .then() -> Just what you want to do after the SQL statements are made.
+- In terminal, note the raw SQL output. The ORM enables you to write out your objects describing the table itself. Yay!
 
 - you should see 'posts' and 'users' in the tables folder
+
+61. Knowledge checkin
+
+- Models: A class. In terms of our 'users' and 'posts', objects defining the blueprints for a user and a post in our database
+
+62. Routers
+
+- Definition: A way to group your endpoints based on different things
+- We will group our routes together based on the models we have creates
+
+63. Controllers
+
+- Definition: What actually does the logic at the endpoints / for the routes defined by the router
+
+64. Router setup
+
+- create top-level folders `/routers` and `/controllers`
+- `/controllers/users.controller.js`
+- `/router/users.router.js`
+- Note the file naming syntax
+- The routers and controllers are part of the MVC (Model View Controller) architecture.
+- In this scenario, the browser is the 'view' in 'MVC'
+
+65. Define users router and users controller for CRUD operations
+
+- '... stub things out ...' :: This means that, for each endpoint, you will do the following three things:
+- In `users.router.js`, name the handler as you set up each endpoint
+- In `users.controller.js`, create the function definition for the handler and export it in your export object
+
+66. Notes
+
+- Dynamic routing: '/:routeParam' -> convention followed _everywhere_
+- Route handler naming convention: 'http...' -> most common convention, but not the only convention out there -> reminder that this is a route handler
+- !! POST method: In this demo, POST is also used to UPDATE a user. This is what he does as work, so that is what he did here.
+
+67. Export router from `users.router.js`
+68. Export handlers in `users.controller.js`

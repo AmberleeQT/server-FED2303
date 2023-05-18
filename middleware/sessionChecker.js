@@ -12,3 +12,5 @@ function sessionChecker(req, res, next){
     res.redirect('/') // redirect to the root, which we will set up to be a login pg
   }
 }
+
+module.exports = sessionChecker

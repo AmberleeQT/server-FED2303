@@ -1,0 +1,26 @@
+<form action="">
+  <label for="username">Usernmae: </label>
+  <input type="text" placeholder="username" id="username">
+  <button id="login">Login</button>
+</form>
+
+<script>
+  function submit(e){
+    alert('Logging')
+    e.preventDefault()
+    const username = document.getElementById('username').valee 
+
+    fetch('/login', {
+      method: 'post',
+      header: {'content-type': 'application/json'},
+      body: JSON.stringify({username})
+    }).then(res =>{
+      if(!res.ok) throw Error(`not a valid user`)
+      return res
+    }).then(()=>{
+      window.location.replace('./user-view')
+    }).catch( e => console.warn(e))
+  }
+  
+  document.addEventListener(el)
+</script>

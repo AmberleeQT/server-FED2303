@@ -625,3 +625,61 @@ module.exports=Post;
 - POST : localhost:80/users/update-user/234
 
 72. Confirm router is configured correctly and commit
+
+## Skiped to Templating
+
+73. Topics
+
+- templating using node
+- components -> a piece of reusable UI
+- Authentication and route guarding -> redirects
+- Hash and why NOT store data as plain text -> Backend
+- Passwords -> Backend
+
+74. Review
+
+- PORT, .env file, models (definition of your data), ORM, routers (defines your endpoints), controllers (logic for getting things done), MVC pattern, 2 ways to connect to DB (DBeaver uses a config object & MongoDb uses a connect string -> Ref documentation), .gitignore,
+
+75. Session
+
+- connectiontime in which you are connected to a server
+- express-session
+
+76. Storage
+
+- SessionStorage - allows server to store things in your browser -> THEME (maybe LocalStorage)
+- LocalStorage - persists
+- DO NOT store PII -> if user is logged in, etc
+- DO use for theme, tracking (elastic search), etc
+- Cookies -> used for authentication
+
+77. Cookies
+
+- used for authentication
+- stored as hash values -> encryption!
+
+78. Hash values
+
+- encryption
+- VS Code automatically does this with your git commits
+- run `git log` in terminal to see git commit history
+
+79. Encryption
+
+- Protect true values
+- Give unique values
+- Hashing? Must have an attached secret (stored in an env variable)
+- Secret changed? Cannot unencrypt data
+
+80. Install packages
+
+- clear terminal
+- run `npm i express-session`
+- run `npm i handlebars`
+- run `npm i express-handlebars` -> chandlebars connector
+- Read documentation!
+
+81. Create directories
+
+- /middleware/sessionChecker.js
+- this will be used to create a super simple session middleware

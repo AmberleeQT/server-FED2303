@@ -1,9 +1,22 @@
 const express = require('express');
-// Create Node App
 const app = express();
-
 const dotenv = require('dotenv');
-// run configuration
+// bring in middleware
+const sessionChecker = require('./middleware/sessionChecker')
+
+// set up session the way express tells you to. -> config object!
+const sessionConfig = {
+  key:'example_test_session', 
+  secret: 'secret!',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false,
+    httpOnly: false,
+    maxAge: 60000,
+  }
+}
+
 dotenv.config();
 
 // Bring is database & models

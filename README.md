@@ -683,3 +683,36 @@ module.exports=Post;
 
 - /middleware/sessionChecker.js
 - this will be used to create a super simple session middleware
+
+82. Create middleware
+
+- checks if session exists
+- checks if userInfo is set
+- redirect to root page
+
+83. Update entrypoint `index.js`
+
+- import sessionChecker
+- config session -> config object!
+- 'key' -> session key you see in browser
+- 'secret' -> want to accept your own session
+- 'resave' -> Will you save to server for persistance or not?
+- 'saveUninitialized' -> if session has been initialized the first time, save to database or not?
+- 'cookie' -> object, actual value we are setting
+- 'secure' -> 'false' allows this cookie to be used on other websites
+- 'httpOnly' -> 'true' means we CANNOT use it in JS at all and frontend cannot access at all. This is very limiting, so we will use 'false'
+- 'maxAge' -> when this cookie will expire ( in ms --> 60000 == 6 min)
+
+const sessionConfig = {
+key:'example_test_session',
+secret: 'secret!',
+resave: false,
+saveUninitialized: false,
+cookie: {
+secure: false,
+httpOnly: false,
+maxAge: 60000,
+}
+}
+
+84. import session manager

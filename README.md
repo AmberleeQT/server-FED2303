@@ -716,3 +716,31 @@ maxAge: 60000,
 }
 
 84. import session manager
+
+85. Set up views router and controller
+86. Import just like userRouter
+87. register view route middleware in view/index.js
+88. register view engine
+
+- View Engine : library to create output HTML
+- place above routers in entrypoint
+
+89. Make sure you have `./view`
+
+90. `./view/layouts/main.handlebars`
+
+- layouts:
+- HTML
+- mustache syntax: {{{body}}} -> dynamic variable in which the output will be displayed
+
+91. `./view/partials`
+
+- partials: little reusable pieces of code
+
+92. Pages
+
+- top-level in `./view`
+
+93. After setting up view pages, partials, and layouts
+
+- update view controller
